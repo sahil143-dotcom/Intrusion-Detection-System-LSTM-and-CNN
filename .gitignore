@@ -1,0 +1,24 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset files (large - download separately, see README)
+data/*.csv
+data/*.zip
+
+# Trained models and generated artifacts
+models/*.keras
+models/*.h5
+*.pkl
+
+# OS files
+Thumbs.db
+.DS_Store

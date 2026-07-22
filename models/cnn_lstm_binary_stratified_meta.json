@@ -1,0 +1,50 @@
+{
+  "model": "cnn_lstm",
+  "mode": "binary",
+  "split": "stratified",
+  "k": 32,
+  "drop_leakage": false,
+  "class_names": [
+    "Normal",
+    "Attack"
+  ],
+  "feature_names": [
+    "dur",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "sload",
+    "dload",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "smean",
+    "dmean",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "input_shape": [
+    32,
+    1
+  ],
+  "n_classes": 2
+}
