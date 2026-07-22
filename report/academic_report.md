@@ -106,7 +106,7 @@ The hybrid model achieves the best accuracy, precision, F1, and lowest FAR among
 |-------|----------|-----------|----------------|-----|-----|
 | CNN | 81.34% | 80.57% | 81.34% | 78.30% | 2.40% |
 | LSTM | 80.07% | 78.85% | 80.07% | 78.65% | 2.47% |
-| **CNN-LSTM (hybrid)** | **82.15%** | **82.60%** | **82.15%** | **79.41%** | **2.26%** |
+| **CNN-LSTM (hybrid)** | **82.22%** | **81.79%** | **82.22%** | **80.31%** | **2.23%** |
 
 Multiclass is harder (10 imbalanced classes, rare types such as Worms/Shellcode). The hybrid still leads the baselines.
 

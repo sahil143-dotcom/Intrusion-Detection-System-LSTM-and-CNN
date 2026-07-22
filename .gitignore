@@ -5,20 +5,29 @@ venv/
 # Python cache
 __pycache__/
 *.py[cod]
+*$py.class
 *.egg-info/
+.pytest_cache/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Dataset files (large - download separately, see README)
+# Dataset files (large — download separately; see README)
 data/*.csv
 data/*.zip
+!data/.gitkeep
 
-# Trained models and generated artifacts
+# Trained model weights (large)
 models/*.keras
 models/*.h5
+models/*_history.npz
+models/*_history.json
 *.pkl
+!models/.gitkeep
 
-# OS files
+# IDE / OS
+.cursor/
+.vscode/
 Thumbs.db
 .DS_Store
+debug-*.log
