@@ -164,7 +164,7 @@ def preprocess(data_dir="data", mode="binary", k=32, drop_leakage=False,
         print(f"  n_classes     : {n_classes}  {class_names}")
         print(f"  X_train shape : {X_train.shape}")
         print(f"  X_test shape  : {X_test.shape}")
-        print(f"  y_train shape : {y_train.shape}")
+        print(f"  y_train shape : {y_train.shape}") 
 
     return X_train, y_train, X_test, y_test, class_names, feature_names
 

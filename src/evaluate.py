@@ -1,6 +1,6 @@
 """Phase 7 - Evaluate a trained IDS model on UNSW-NB15.
 
-Reports the paper's metrics (Halbouni et al., IEEE Access 2022):
+Reports that the paper's has the following metrics (Halbouni et al., IEEE Access 2022):
     accuracy, precision, detection rate (recall), F1-score, False Alarm Rate (FAR).
 
 Also saves:

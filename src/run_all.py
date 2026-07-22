@@ -6,7 +6,7 @@ Trains and evaluates every combination of:
     split in {official, stratified}
 
 For each run it records accuracy, precision, detection rate (recall), F1, and
-False Alarm Rate (FAR), then writes a summary table (CSV) and comparison charts.
+False Alarm Rate (FAR), then writes a summary table (CSV) and comparison charts for the model.
 
 Usage:
     python src/run_all.py                 # full matrix
