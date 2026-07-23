@@ -135,8 +135,17 @@ Intrusion-Detection-System-LSTM-and-CNN/
 
 ## Quick start
 
+> **Before you train:** the UNSW-NB15 CSV files are **not** in this GitHub repo (they are large).
+> Download them into `data/` first, then run:
+>
+> ```powershell
+> python src/check_setup.py
+> ```
+>
+> Every check must say `[PASS]`. Full demo steps: [`DEMO.md`](DEMO.md) · Dataset help: [`data/README.md`](data/README.md)
+
 ### 1. Requirements
-- **Python 3.12** (TensorFlow does not support 3.14 yet)
+- **Python 3.9–3.12** (prefer **3.12**; TensorFlow does not support 3.14 yet)
 - Windows / macOS / Linux
 
 ### 2. Install
@@ -150,30 +159,44 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-### 3. Add the dataset
+### 3. Add the dataset (required)
 
-Download **UNSW_NB15_training-set.csv** and **UNSW_NB15_testing-set.csv** and place them in `data/`.
+Download **both** files and place them in `data/` with these **exact** names:
+
+| Filename | Role here |
+|----------|-----------|
+| `UNSW_NB15_testing-set.csv` | Training (~175k rows) |
+| `UNSW_NB15_training-set.csv` | Testing (~82k rows) |
 
 Sources:
 - [UNSW research page](https://research.unsw.edu.au/projects/unsw-nb15-dataset)
 - Or Kaggle: `mrwellsdavid/unsw-nb15`
 
-> **Note:** some copies swap the filenames. This code maps them by **size/role** (larger ≈ train).
+Then verify:
+
+```powershell
+dir data\*.csv
+python src/check_setup.py
+```
+
+> **Note:** some copies swap the filenames. This code maps them by **size/role** (larger ≈ train). See [`data/README.md`](data/README.md).
 
 ### 4. Train & evaluate (best setup)
 
 ```powershell
-# Binary (matches the paper best)
+# Binary (matches the paper best) — use this for demos
 python src/train.py --model cnn_lstm --mode binary --split stratified
 python src/evaluate.py --model cnn_lstm --mode binary --split stratified
 
-# Multiclass (10 attack types)
+# Multiclass (10 attack types) — only after binary works
 python src/train.py --model cnn_lstm --mode multiclass --split stratified
 python src/evaluate.py --model cnn_lstm --mode multiclass --split stratified
 ```
 
 Other models: `--model cnn` or `--model lstm`  
 Harder protocol: `--split official` (train/test distribution shift)
+
+**Demo checklist:** [`DEMO.md`](DEMO.md)
 
 ---
 

@@ -46,8 +46,28 @@ NON_FEATURE_COLS = ["id", "label", "attack_cat"]
 
 def load_raw(data_dir="data"):
     """Load the raw train and test DataFrames (mapped to their real roles)."""
-    train = pd.read_csv(os.path.join(data_dir, TRAIN_FILE))
-    test = pd.read_csv(os.path.join(data_dir, TEST_FILE))
+    train_path = os.path.join(data_dir, TRAIN_FILE)
+    test_path = os.path.join(data_dir, TEST_FILE)
+    missing = [p for p in (train_path, test_path) if not os.path.isfile(p)]
+    if missing:
+        raise FileNotFoundError(
+            "UNSW-NB15 CSV files are missing - the model cannot train without them.\n\n"
+            "GitHub does NOT include the dataset (files are large). You must download "
+            "them and place BOTH files in the data/ folder with these exact names:\n"
+            f"  - {TRAIN_FILE}   (larger file, ~175k rows - used as TRAIN)\n"
+            f"  - {TEST_FILE}  (smaller file, ~82k rows - used as TEST)\n\n"
+            "Missing path(s):\n  - " + "\n  - ".join(missing) + "\n\n"
+            "Download sources:\n"
+            "  - https://research.unsw.edu.au/projects/unsw-nb15-dataset\n"
+            "  - Kaggle: mrwellsdavid/unsw-nb15\n\n"
+            "Then verify from the project root:\n"
+            "  dir data\\*.csv          (Windows)\n"
+            "  ls data/*.csv           (macOS/Linux)\n"
+            "  python src/check_setup.py\n"
+            "See also: data/README.md and DEMO.md"
+        )
+    train = pd.read_csv(train_path)
+    test = pd.read_csv(test_path)
     return train, test
 
 
