@@ -213,16 +213,7 @@ Harder protocol: `--split official` (train/test distribution shift)
 
 ---
 
-## Deliverables (internship-ready)
 
-| File | Purpose |
-|------|---------|
-| [`report/academic_report.md`](report/academic_report.md) | Full method + results + paper comparison |
-| [`report/IDS_Journey_Keywords.pdf`](report/IDS_Journey_Keywords.pdf) | Keywords / buzzwords for viva |
-| [`report/report.md`](report/report.md) | Short results index |
-| `report/*_stratified_*.png` | Confusion matrices, ROC, training curves |
-
----
 
 ## Tech stack
 
@@ -245,4 +236,3 @@ This repository is an educational internship implementation of a CNN–LSTM IDS.
 
 ---
 
-**Repo:** [sahil143-dotcom/Intrusion-Detection-System-LSTM-and-CNN](https://github.com/sahil143-dotcom/Intrusion-Detection-System-LSTM-and-CNN)
