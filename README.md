@@ -200,18 +200,6 @@ Harder protocol: `--split official` (train/test distribution shift)
 
 ---
 
-## Metrics explained (for presentations)
-
-| Metric | Meaning |
-|--------|---------|
-| **Accuracy** | Overall % correct |
-| **Precision** | Of predicted attacks, how many were real |
-| **Detection rate (Recall)** | Of real attacks, how many we caught |
-| **F1-score** | Balance of precision and recall |
-| **FAR** | Normal traffic wrongly flagged as attack (lower is better) |
-| **ROC-AUC** | How well the model ranks attack vs normal |
-
----
 
 
 
